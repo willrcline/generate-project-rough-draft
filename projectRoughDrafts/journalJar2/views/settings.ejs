@@ -1,0 +1,19 @@
+<!-- settings.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Settings</title>
+  </head>
+  <body>
+    <h1>User Settings</h1>
+    <form method="POST" action="/users/settings">
+      <label for="phone">Phone Number:</label>
+      <input type="text" name="phone" id="phone" value="<%= user.phone %>">
+      <br>
+      <label for="time">Time to receive journal prompt:</label>
+      <input type="time" name="time" id="time" value="<%= user.time %>">
+      <br>
+      <input type="submit" value="Save">
+    </form>
+  </body>
+</html>

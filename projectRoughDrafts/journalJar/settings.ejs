@@ -1,0 +1,30 @@
+<!-- settings.ejs -->
+
+<!-- HTML form for user settings -->
+<form action="/users/settings" method="POST">
+
+  <!-- User's name input -->
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" value="<%= user.name %>">
+
+  <!-- User's phone number input -->
+  <label for="phone">Phone Number:</label>
+  <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+
+  <!-- User's preferred journal prompt time input -->
+  <label for="promptTime">Journal Prompt Time:</label>
+  <input type="time" id="promptTime" name="promptTime" value="<%= user.promptTime %>">
+
+  <!-- Submit button -->
+  <button type="submit">Save</button>
+</form>
+
+<!-- JavaScript to validate phone number input -->
+<script>
+  const phoneInput = document.getElementById('phone');
+  phoneInput.addEventListener('input', () => {
+    const formattedNumber = phoneInput.value.replace(/\D/g, '');
+    const isValidNumber = formattedNumber.length === 10;
+    phoneInput.setCustomValidity(isValidNumber ? '' : 'Please enter a valid 10-digit phone number');
+  });
+</script>

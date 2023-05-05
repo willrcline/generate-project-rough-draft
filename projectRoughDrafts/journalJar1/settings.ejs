@@ -1,0 +1,21 @@
+<!-- settings.ejs -->
+
+<!-- HTML form for updating user settings -->
+<form action="/users/settings" method="POST">
+  <label for="phone">Phone Number:</label>
+  <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+  <br>
+  <label for="time">Time to receive daily text message:</label>
+  <input type="time" id="time" name="time" value="<%= user.time %>">
+  <br>
+  <input type="submit" value="Save">
+</form>
+
+<!-- Display any error messages -->
+<% if (errors.length > 0) { %>
+  <ul>
+    <% errors.forEach(function(error) { %>
+      <li><%= error.msg %></li>
+    <% }); %>
+  </ul>
+<% } %>
