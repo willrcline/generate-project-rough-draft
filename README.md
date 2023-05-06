@@ -2,6 +2,11 @@
 
 ## Description
 Project Autocode is an intelligent coding assistant that streamlines the software development process by leveraging the power of OpenAI API to generate project file structures and code. Upon receiving a description of a coding project, it performs the following steps:
+1. Project Layout Generation: The first OpenAI API call takes the project description as input and returns a well-organized layout for the project file structure, complete with detailed descriptions for each file.
+2. Code Generation: For each file specified in the file structure, another OpenAI API call is made to generate the code based on the file's description.
+3. Local File System Integration: The generated code is then written into the local file system, creating files and folders with corresponding names as per the generated project layout.  
+
+With Project Autocode, developers can rapidly prototype and build applications, saving valuable time and resources while maintaining a high level of code quality.
   
 ## Table of Contents:
 * [Installation](#installation-instructions)
